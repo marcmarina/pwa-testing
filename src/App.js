@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import styled from 'styled-components';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Alert variant="success">Life is like a </Alert>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  display: flex;
+  padding: 10px;
+`;
+
+const Alert = styled.div`
+  ${props => `
+    background-color: ${props.variant === 'error' ? '#D64B2E66' : '#57C53966'};
+    color: ${props.variant === 'error' ? '#D64B2E' : '#57C539'};
+    border: 1px solid ${props.variant === 'error' ? '#D64B2E' : '#57C539'};
+  `}
+  border-radius: 2px;
+`;
 
 export default App;
